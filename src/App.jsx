@@ -355,7 +355,7 @@ function App() {
 
         <div className='flex justify-center items-center m-[10px]'>
           <EditIcon></EditIcon>
-          <Button variant="text">Edit</Button>
+          <Button variant="text " onClick={}>Edit</Button>
         </div>
 
         <div className='flex justify-center items-center m-[10px]'>
