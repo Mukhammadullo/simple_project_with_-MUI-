@@ -46,6 +46,16 @@ function App() {
   const [citi, setSciti] = useState("")
   const [phon, setPhon] = useState("")
 
+  const [open2, setOpen2] = React.useState(false);
+
+  const handleClickOpen2 = () => {
+    setOpen2(true);
+  };
+
+  const handleClose2 = () => {
+    setOpen2(false);
+  };
+
 
   const [data, setData] = useState([
     {
@@ -355,7 +365,10 @@ function App() {
 
         <div className='flex justify-center items-center m-[10px]'>
           <EditIcon></EditIcon>
-          <Button variant="text " onClick={}>Edit</Button>
+          <Button variant="text" onClick={() => {
+            handleClose1()
+            handleClickOpen2()
+          }}>Edit</Button>
         </div>
 
         <div className='flex justify-center items-center m-[10px]'>
@@ -369,19 +382,25 @@ function App() {
 
 
       {/* DialogEdit */}
-      <Dialog open={open} TransitionComponent={Transition} keepMounted
-        onClose={handleClose}
+
+      <Button variant="outlined" onClick={handleClickOpen2}>
+        Open alert dialog
+      </Button>
+      <Dialog
+        open={open2}
+        onClose={handleClose2}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
       >
-        <DialogTitle>{"Add New +"}
-          <CloseIcon onClick={handleClose}></CloseIcon>
+        <DialogTitle id="alert-dialog-title">
+          {"Edit"}
         </DialogTitle>
-
-
-        {/* input */}
         <DialogContent>
-          <TextField value={avatar} onChange={(event) => setAvatar(event.target.value)} sx={{ marginBottom: "25px", marginTop: "10px" }} fullWidth label="Image" id="fullWidth" />
-          <TextField value={name} onChange={(event) => setName(event.target.value)} sx={{ marginBottom: "25px" }} fullWidth label="name" id="fullWidth" />
-          <TextField value={email} onChange={(event) => setEmail(event.target.value)} sx={{ marginBottom: "25px" }} fullWidth label="E-mail" id="fullWidth" />
+
+          <TextField sx={{ marginBottom: "25px", marginTop: "10px" }} fullWidth label="Image" id="fullWidth" />
+          <TextField sx={{ marginBottom: "25px", marginTop: "10px" }} fullWidth label="Name" id="fullWidth" />
+          <TextField sx={{ marginBottom: "25px", marginTop: "10px" }} fullWidth label="E-mail" id="fullWidth" />
+
           {/* status */}
           <TextField value={statu} onChange={(event) => setStatu(event.target.value)} sx={{ width: "552px", marginBottom: "25px" }} id="outlined-select-currency" select label="Status" defaultValue="USD" >
             <MenuItem value={false}>
@@ -391,6 +410,7 @@ function App() {
               {"Active"}
             </MenuItem>
           </TextField>
+
           {/* textfiled_city */}
           <TextField value={citi} onChange={(event) => setSciti(event.target.value)} sx={{ width: "552px", marginBottom: "25px" }} id="outlined-select-currency" select label="City" defaultValue="EUR" >
             {currencies.map((option) => (
@@ -400,15 +420,15 @@ function App() {
             ))}
           </TextField>
 
-          {/* phone */}
-          <TextField value={phon} onChange={(event) => setPhon(event.target.value)} sx={{ marginBottom: "25px" }} fullWidth label="phone" id="fullWidth" />
+          <TextField sx={{ marginBottom: "25px", marginTop: "10px" }} fullWidth label="phone" id="fullWidth" />
+
 
         </DialogContent>
-
         <DialogActions>
-          <Button variant="contained" onClick={() => addUser()}>Save</Button>
-          <Button variant="outlined" onClick={handleClose}>Cancel</Button>
-
+          <Button onClick={handleClose2}>Disagree</Button>
+          <Button onClick={handleClose2} autoFocus>
+            Agree
+          </Button>
         </DialogActions>
       </Dialog>
 
