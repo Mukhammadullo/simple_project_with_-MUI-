@@ -137,7 +137,7 @@ function App() {
   const [open1, setOpen1] = React.useState(false);
   const [elemModal, setElemeModal] = useState(null)
   const handleClickOpen1 = (e) => {
-    
+
     setElemeModal(e)
     setOpen1(true);
   };
@@ -360,10 +360,6 @@ function App() {
           <DeleteIcon></DeleteIcon>
           <Button variant="text" onClick={() => delUser(elemModal.id)}>Delete</Button>
         </div>
-
-
-
-
         <DialogActions>
           <Button onClick={handleClose1}>Colose</Button>
         </DialogActions>
