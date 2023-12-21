@@ -294,7 +294,9 @@ function App() {
         </div>
       </section>
 
-      {/* Dialog Add___________________________________________________ */}
+
+
+      {/* Dialog Add_ */}
       <Dialog open={open} TransitionComponent={Transition} keepMounted
         onClose={handleClose}
       >
