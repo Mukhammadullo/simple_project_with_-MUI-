@@ -368,6 +368,51 @@ function App() {
       </Dialog>
 
 
+      {/* DialogEdit */}
+      <Dialog open={open} TransitionComponent={Transition} keepMounted
+        onClose={handleClose}
+      >
+        <DialogTitle>{"Add New +"}
+          <CloseIcon onClick={handleClose}></CloseIcon>
+        </DialogTitle>
+
+
+        {/* input */}
+        <DialogContent>
+          <TextField value={avatar} onChange={(event) => setAvatar(event.target.value)} sx={{ marginBottom: "25px", marginTop: "10px" }} fullWidth label="Image" id="fullWidth" />
+          <TextField value={name} onChange={(event) => setName(event.target.value)} sx={{ marginBottom: "25px" }} fullWidth label="name" id="fullWidth" />
+          <TextField value={email} onChange={(event) => setEmail(event.target.value)} sx={{ marginBottom: "25px" }} fullWidth label="E-mail" id="fullWidth" />
+          {/* status */}
+          <TextField value={statu} onChange={(event) => setStatu(event.target.value)} sx={{ width: "552px", marginBottom: "25px" }} id="outlined-select-currency" select label="Status" defaultValue="USD" >
+            <MenuItem value={false}>
+              {"Inactive"}
+            </MenuItem>
+            <MenuItem value={true}>
+              {"Active"}
+            </MenuItem>
+          </TextField>
+          {/* textfiled_city */}
+          <TextField value={citi} onChange={(event) => setSciti(event.target.value)} sx={{ width: "552px", marginBottom: "25px" }} id="outlined-select-currency" select label="City" defaultValue="EUR" >
+            {currencies.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+
+          {/* phone */}
+          <TextField value={phon} onChange={(event) => setPhon(event.target.value)} sx={{ marginBottom: "25px" }} fullWidth label="phone" id="fullWidth" />
+
+        </DialogContent>
+
+        <DialogActions>
+          <Button variant="contained" onClick={() => addUser()}>Save</Button>
+          <Button variant="outlined" onClick={handleClose}>Cancel</Button>
+
+        </DialogActions>
+      </Dialog>
+
+
     </>
   )
 }
