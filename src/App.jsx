@@ -425,7 +425,7 @@ function App() {
         <DialogActions>
           <Button onClick={handleClose2}>Disagree</Button>
           <Button onClick={handleClose2} autoFocus>
-            Agree
+           Cancel
           </Button>
         </DialogActions>
       </Dialog>
