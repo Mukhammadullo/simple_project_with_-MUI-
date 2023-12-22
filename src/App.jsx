@@ -383,10 +383,8 @@ function App() {
 
       {/* DialogEdit */}
 
-      <Button variant="outlined" onClick={handleClickOpen2}>
-        Open alert dialog
-      </Button>
-      <Dialog
+      
+    <Dialog
         open={open2}
         onClose={handleClose2}
         aria-labelledby="alert-dialog-title"
@@ -397,9 +395,9 @@ function App() {
         </DialogTitle>
         <DialogContent>
 
-          <TextField sx={{ marginBottom: "25px", marginTop: "10px" }} fullWidth label="Image" id="fullWidth" />
-          <TextField sx={{ marginBottom: "25px", marginTop: "10px" }} fullWidth label="Name" id="fullWidth" />
-          <TextField sx={{ marginBottom: "25px", marginTop: "10px" }} fullWidth label="E-mail" id="fullWidth" />
+          <TextField   sx={{ marginBottom: "25px", marginTop: "10px" }} fullWidth label="Image" id="fullWidth" />
+          <TextField   sx={{ marginBottom: "25px", marginTop: "10px" }} fullWidth label="Name" id="fullWidth" />
+          <TextField   sx={{ marginBottom: "25px", marginTop: "10px" }} fullWidth label="E-mail" id="fullWidth" />
 
           {/* status */}
           <TextField value={statu} onChange={(event) => setStatu(event.target.value)} sx={{ width: "552px", marginBottom: "25px" }} id="outlined-select-currency" select label="Status" defaultValue="USD" >
@@ -412,7 +410,7 @@ function App() {
           </TextField>
 
           {/* textfiled_city */}
-          <TextField value={citi} onChange={(event) => setSciti(event.target.value)} sx={{ width: "552px", marginBottom: "25px" }} id="outlined-select-currency" select label="City" defaultValue="EUR" >
+          <TextField  value={citi} onChange={(event) => setSciti(event.target.value)} sx={{ width: "552px", marginBottom: "25px" }} id="outlined-select-currency" select label="City" defaultValue="EUR" >
             {currencies.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
@@ -420,7 +418,7 @@ function App() {
             ))}
           </TextField>
 
-          <TextField sx={{ marginBottom: "25px", marginTop: "10px" }} fullWidth label="phone" id="fullWidth" />
+          <TextField  sx={{ marginBottom: "25px", marginTop: "10px" }} fullWidth label="phone" id="fullWidth" />
 
 
         </DialogContent>
